@@ -11,6 +11,7 @@ wget -O - http://distfiles.gentoo.org/releases/arm64/autobuilds/$(wget -O - http
 
 echo "Updating /etc/portage/make.conf..."
 cat <<EOF >>${ROOT}/etc/portage/make.conf
+USE="bindist"
 FEATURES="buildpkg -pid-sandbox -network-sandbox"
 GRUB_PLATFORMS="efi-32 efi-64"
 MAKEOPTS="$MAKEOPTS"
