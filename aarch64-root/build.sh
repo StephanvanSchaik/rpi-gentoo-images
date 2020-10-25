@@ -37,15 +37,10 @@ echo "Installing Portage..."
 chroot ${ROOT} /bin/bash --login -c emerge-webrsync
 } &> /dev/stdout
 
-echo "Creating binary packages of @system..."
-{
-chroot ${ROOT} /bin/bash --login -c "quickpkg --include-config=y '*/*'"
-} &> /dev/stdout
-
 echo "Installing packages..."
 {
 echo "sys-kernel/linux-firmware linux-fw-redistributable no-source-code" >> ${ROOT}/etc/portage/package.license
-chroot ${ROOT} /bin/bash --login -c "emerge vim eix grub linux-firmware dhcpcd wpa_supplicant ntp openssh growpart dosfstools btrfs-progs gptfdisk parted"
+chroot ${ROOT} /bin/bash --login -c "emerge vim eix grub genkernel linux-firmware dhcpcd wpa_supplicant ntp openssh growpart dosfstools btrfs-progs gptfdisk parted"
 } &> /dev/stdout
 
 echo "Finalizing..."
