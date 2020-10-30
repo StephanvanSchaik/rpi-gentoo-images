@@ -81,6 +81,12 @@ Finally, tell crosstool-ng build and install the cross-compiler:
 ct-ng build
 ```
 
+Make sure to run the following or to put it in your `~/.bashrc`:
+
+```
+export PATH="$PATH:$HOME/x-tools/aarch64-unknown-linux-gnu/bin/"
+```
+
 ## Setting up QEMU
 
 **Note**: if you want to build this on AArch64, you can simply ignore this step.
